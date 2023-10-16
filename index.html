@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Calculator app</title>
+
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/index.js" defer></script>
+  </head>
+  <body >
+    <main class="container" data-theme="theme-3">
+      <div class="calc">
+        <div class="calc__config">
+          <h1 class="calc__config-title">Calc</h1>
+
+          <div class="calc__config-theme">
+            <h3>Theme</h3>
+
+            <div>
+              <div class="calc__config-labels">
+                <label for="">1</label>
+                <label for="">2</label>
+                <label for="">3</label>
+              </div>
+              <div class="calc__config-switch">
+                <button
+                  class="toggle-button"
+                  id="theme1"
+                  data-color="toggle-1"
+                ></button>
+                <button
+                  class="toggle-button"
+                  id="theme2"
+                  data-color="toggle-2"
+                ></button>
+                <button
+                  class="toggle-button"
+                  id="theme3"
+                  data-color="toggle-3"
+                ></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc__input">
+          <div class="calc__input-previous" id="previousInput"></div>
+
+          <input type="text" class="calc__input-edit" id="currentInput" disabled />
+        </div>
+
+        <div class="calc__buttons">
+          <button class="btn" value="7" data-number>7</button>
+          <button class="btn" value="8" data-number>8</button>
+          <button class="btn" value="9" data-number>9</button>
+          <button class="btn btn--clear" value="del" data-del>DEL</button>
+          <button class="btn" value="4" data-number>4</button>
+          <button class="btn" value="5" data-number>5</button>
+          <button class="btn" value="6" data-number>6</button>
+          <button class="btn" value="+" data-operation>+</button>
+          <button class="btn" value="1" data-number>1</button>
+          <button class="btn" value="2" data-number>2</button>
+          <button class="btn" value="3" data-number>3</button>
+          <button class="btn" value="-" data-operation>-</button>
+          <button class="btn" value="." data-number>.</button>
+          <button class="btn" value="0" data-number>0</button>
+          <button class="btn" value="/" data-operation>/</button>
+          <button class="btn" value="x" data-operation>x</button>
+          <button class="btn btn--clear btn--large" value="reset" data-reset>
+            RESET
+          </button>
+          <button class="btn btn--equal btn--large" value="=" data-equals>
+            =
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Muhammad Saad</a>.
+      </div>
+    </footer>
+  </body>
+</html>

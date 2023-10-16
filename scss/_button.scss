@@ -1,0 +1,77 @@
+.toggle-button {
+  border-radius: 22px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  background-color: transparent;
+  border: 0px solid transparent;
+
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#theme1:hover {
+  background-color: $toggle-1;
+}
+#theme2:hover {
+  background-color: $toggle-2;
+}
+#theme3:hover {
+  background-color: $toggle-3;
+}
+
+.toggle-button[data-color="toggle-1"].active {
+  background-color: $toggle-1;
+}
+
+.toggle-button[data-color="toggle-2"].active {
+  background-color: $toggle-2;
+}
+
+.toggle-button[data-color="toggle-3"].active {
+  background-color: $toggle-3;
+}
+
+.btn {
+  width: 55px;
+  height: 55px;
+  background-color: var(--key-bg);
+  color: var(--text-primary);
+  font-size: 25px;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  @include shadow-bottom(var(--key-shadow));
+  cursor: pointer;
+  &:hover {
+    filter: brightness(150%);
+  }
+}
+
+.btn--equal {
+  background-color: var(--equal-key-bg);
+  @include shadow-bottom(var(--equal-key-shadow));
+  color: var(--text-equal);
+  font-size: 18px;
+}
+
+.btn--clear {
+  background-color: var(--clear-key-bg);
+  @include shadow-bottom(var(--clear-key-shadow));
+  color: var(--text-clear);
+  font-size: 18px;
+}
+
+@media (min-width: 900px) {
+  .btn {
+    width: 120px;
+    height: 60px;
+    border-radius: 5px;
+  }
+
+  .btn[data-number] {
+    font-size: 30px;
+  }
+}

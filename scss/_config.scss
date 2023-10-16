@@ -1,0 +1,93 @@
+
+$toggle-1: hsl(6, 63%, 50%);
+$toggle-2: hsl(25, 98%, 40%);
+$toggle-3: hsl(176, 100%, 44%);
+
+$themes: (
+  "theme-1": (
+    //BACKGROUND COLORS
+    "main-bg": hsl(222, 26%, 31%),
+    "toggle-bg": hsl(223, 31%, 20%),
+    "keypad-bg":hsl(223, 31%, 20%),
+    "screen-bg": hsl(224, 36%, 15%),
+    //KEYS COLORS
+    "clear-key-bg": hsl(225, 21%, 49%),
+    "clear-key-shadow": hsl(224, 28%, 35%),
+    "equal-key-bg":hsl(6, 63%, 50%),
+    "equal-key-shadow": hsl(6, 70%, 34%),
+    "key-bg":hsl(30, 25%, 89%),
+    "key-shadow":hsl(28, 16%, 65%),
+
+
+    //TEXT COLOR
+    "text-primary": hsl(221, 14%, 31%),
+    "text-equal": hsl(0, 0%, 100%),
+    "text-clear": hsl(0, 0%, 100%),
+    "text-top":  hsl(0, 0%, 100%),
+  ),
+  "theme-2": (
+    //BACKGROUND COLORS
+    "main-bg": hsl(0, 0%, 90%),
+    "toggle-bg": hsl(0, 5%, 81%),
+    "keypad-bg":hsl(0, 5%, 81%),
+    "screen-bg": hsl(0, 0%, 93%),
+    //KEYS COLORS
+    "clear-key-bg": hsl(185, 42%, 37%),
+    "clear-key-shadow": hsl(185, 58%, 25%),
+    "equal-key-bg":hsl(25, 98%, 40%),
+    "equal-key-shadow": hsl(25, 99%, 27%),
+    "key-bg":hsl(45, 7%, 89%),
+    "key-shadow":hsl(35, 11%, 61%),
+
+
+    //TEXT COLOR
+    "text-primary":  hsl(60, 10%, 19%),
+    "text-clear": hsl(0, 0%, 100%),
+    "text-equal":hsl(0, 0%, 100%),
+    "text-top" : hsl(60, 10%, 19%),
+  ),
+  "theme-3": (
+    //BACKGROUND COLORS
+    "main-bg": hsl(268, 75%, 9%),
+    "toggle-bg": hsl(268, 71%, 12%),
+    "keypad-bg":hsl(268, 71%, 12%),
+    "screen-bg": hsl(268, 71%, 12%),
+    //KEYS COLORS
+    "clear-key-bg": hsl(281, 89%, 26%),
+    "clear-key-shadow": hsl(285, 91%, 52%),
+    "equal-key-bg":hsl(176, 100%, 44%),
+    "equal-key-shadow": hsl(177, 92%, 70%),
+    "key-bg":hsl(268, 47%, 21%),
+    "key-shadow":(290, 70%, 36%),
+
+
+    //TEXT COLOR
+    "text-primary":  hsl(52, 100%, 62%),
+    "text-top":  hsl(52, 100%, 62%),
+    "text-equal":hsl(268, 47%, 21%),
+    "text-clear":hsl(0, 0%, 100%),
+  ),
+);
+
+
+@each $theme-name, $properties in $themes {
+  .container[data-theme="#{$theme-name}"] {
+    // define a css variable for each property
+    @each $name, $property in $properties {
+      // --#{$name}: #{$property};
+      --#{$name}: #{$property};
+    }
+  }
+}
+
+
+
+@mixin shadow-bottom($color:var(--key-shadow), $offset: 4px) {
+  box-shadow: 0 $offset $offset $color; 
+}
+
+
+// @mixin set-button-hover($color){
+//   $colorOriginal: var(#{$color});
+//   background-color: color-mix(in srgb, color percentage, color percentage);
+// }
